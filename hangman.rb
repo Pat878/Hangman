@@ -19,8 +19,11 @@ def startGame
   print "Let's play Hangman!\nYou have 6 chances to guess my word.\nHere is your hint: #{@hint}\nGive me a letter!"
   letter = gets.chomp
 
-  print @wordArray
-
+  print @wordArray.map { |x|
+    if x == letter
+      letter
+    else "_"
+  end }
 
 
 end
