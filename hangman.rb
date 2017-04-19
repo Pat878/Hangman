@@ -31,6 +31,21 @@ def checkGuess
 end }
 
 print @hint.join(" ")
+turn
+end
+
+def turn
+  @i ||= -1
+  @i += 1
+
+  if @win != true
+  print "You have #{5-@i} guesses left!\n"
+  end
+
+  if @i == 11
+  print "Game over!\nHere's my code: #{@colorCode}"
+  exit
+  end
 
 end
 
