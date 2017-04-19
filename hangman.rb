@@ -24,7 +24,7 @@ def startGame
       letter
     else "_"
   end }
-  print @hint
+  print @hint.join(" ")
 
 
 end
