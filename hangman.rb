@@ -24,11 +24,14 @@ end
 def checkGuess
 
 @hint = @wordArray.map! { |x|
+
  if x == @letter
    @letter
  else "_"
 end }
+
 print @hint.join(" ")
+
 end
 
 end
