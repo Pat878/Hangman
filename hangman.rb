@@ -34,6 +34,9 @@ print @hint.join(" ")
 turn
 end
 
+def checkWin
+end
+
 def turn
   @i ||= -1
   @i += 1
