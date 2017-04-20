@@ -25,7 +25,8 @@ def checkGuess
   @index = @wordArray.index(@letter)
   if @wordArray.index(@letter) != nil
   @hint.insert(@index,@letter)
-
+else
+  turn
 end
 
 print @hint.join(" ")
@@ -51,7 +52,7 @@ def turn
   print "You have #{5-@i} guesses left!\n"
   end
 
-  if @i == 11
+  if @i == 5
   print "Game over!"
   exit
   end
