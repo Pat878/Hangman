@@ -28,17 +28,6 @@ def checkGuess
 
 end
 
-
-
-#@hint = @wordArray.map { |x|
-
- #if x == @letter
-#@letter
-#elsif x == @letter2
-#  @letter2
-#else
-#  "_"
-#end }
 print @hint.join(" ")
 checkWin
 end
