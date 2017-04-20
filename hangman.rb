@@ -54,6 +54,7 @@ def turn
 
   if @i == 5
   print "Game over!"
+  print @wordArray
   exit
   end
 
