@@ -35,6 +35,11 @@ turn
 end
 
 def checkWin
+  if @hint == @wordArray
+    print "You win!"
+  else
+    checkGuess
+  end
 end
 
 def turn
