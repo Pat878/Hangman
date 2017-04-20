@@ -18,28 +18,38 @@ def startGame
 
   print "Let's play Hangman!\nYou have 6 chances to guess my word.\nHere is your hint: #{@hint}\nGive me a letter!"
   @letter = gets.chomp
-checkGuess
+  checkGuess
 end
 
 def checkGuess
-
-@hint = @wordArray.map! { |x|
-
- if x == @letter
-   @letter
- else "_"
-end }
-
-print @hint.join(" ")
-checkWin
+  @index = @wordArray.index(@letter)
+  if @wordArray.index(@letter) != nil
+  @hint.insert(@index,@letter)
 
 end
 
+
+
+#@hint = @wordArray.map { |x|
+
+ #if x == @letter
+#@letter
+#elsif x == @letter2
+#  @letter2
+#else
+#  "_"
+#end }
+print @hint.join(" ")
+checkWin
+end
+
 def checkWin
-  if @hint == @wordArray
+  if @hint.include?("_") == false
     print "You win!"
-  else
+    else
     turn
+    print "Give me another letter!"
+    @letter = gets.chomp
     checkGuess
   end
 end
@@ -53,7 +63,7 @@ def turn
   end
 
   if @i == 11
-  print "Game over!\nHere's my code: #{@colorCode}"
+  print "Game over!"
   exit
   end
 
