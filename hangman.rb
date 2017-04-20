@@ -22,13 +22,10 @@ def startGame
 end
 
 def checkGuess
-  @index = @wordArray.index(@letter)
+  @index = @wordArray.index(@letter).to_i
   if @wordArray.index(@letter) != nil
-  @hint.insert(@index,@letter)
-else
-  turn
+  @hint[@index] = @letter
 end
-
 print @hint.join(" ")
 checkWin
 end
