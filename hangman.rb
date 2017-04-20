@@ -31,13 +31,15 @@ def checkGuess
 end }
 
 print @hint.join(" ")
-turn
+checkWin
+
 end
 
 def checkWin
   if @hint == @wordArray
     print "You win!"
   else
+    turn
     checkGuess
   end
 end
