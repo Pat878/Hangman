@@ -35,6 +35,7 @@ end
 def checkWin
   if @hint.include?("_") == false
     print "You win!"
+    exit
     else
     turn
     print "Give me another letter!"
