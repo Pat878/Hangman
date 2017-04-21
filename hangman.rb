@@ -22,7 +22,7 @@ def startGame
 end
 
 def checkGuess
-  @index = @wordArray.index(@letter).to_i
+  @index = @wordArray.index(@letter)
   if @wordArray.index(@letter) != nil
   @hint[@index] = @letter
 end
