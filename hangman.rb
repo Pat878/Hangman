@@ -55,7 +55,7 @@ def turn
   @i += 1
 
   if @win != true
-  print "You have #{7-@i} guesses left!\n"
+  print "\nYou have #{7-@i} guesses left!\n"
   end
 
   if @i == 7
