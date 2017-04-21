@@ -1,3 +1,6 @@
+#I used this source to write the checkGuess method
+#https://stackoverflow.com/questions/29636503/getting-the-indexes-of-duplicate-elements-in-arrays-ruby
+
 class Hangman
 
 def select_random_word
@@ -22,10 +25,13 @@ def startGame
 end
 
 def checkGuess
-  @index = @wordArray.index(@letter)
-  if @wordArray.index(@letter) != nil
-  @hint[@index] = @letter
-end
+@index = @wordArray.each_index.select { |i| @wordArray [i] == @letter }
+@index.map {|x| @hint[x] = @letter}
+  #@index = @wordArray.index(@letter)
+  #if @wordArray.index(@letter) != nil
+  #@hint[@index] = @letter
+#end
+print @wordArray
 print @hint.join(" ")
 checkWin
 end
