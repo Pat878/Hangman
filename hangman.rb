@@ -44,7 +44,7 @@ def checkWin
     print "You win!"
     exit
     else
-    print "Give me another letter!"
+    print "\nGive me another letter!"
     @letter = gets.chomp
     checkGuess
   end
