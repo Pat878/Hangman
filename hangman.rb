@@ -18,6 +18,7 @@ def startGame
   @wordArray = @word.split("")
   @length = @word.length
   @hint = Array.new(@length){"_"}
+  @wrongLetters = []
 
   print "Let's play Hangman!\nYou have 8 chances to guess my word.\nHere is your hint: #{@hint}\nGive me a letter!"
   @letter = gets.chomp
@@ -27,6 +28,7 @@ end
 def checkGuess
 @index = @wordArray.each_index.select { |i| @wordArray [i] == @letter }
 if @index.empty? == true
+  @wrongLetters.push(@letter)
   turn
 else
 @index.map {|x| @hint[x] = @letter}
@@ -36,12 +38,13 @@ end
   #@hint[@index] = @letter
 #end
 print @hint.join(" ")
+print "\nIncorrect guesses: #{@wrongLetters}"
 checkWin
 end
 
 def checkWin
   if @hint.include?("_") == false
-    print "You win!"
+    print "\nYou win!"
     exit
     else
     print "\nGive me another letter!"
