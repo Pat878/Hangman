@@ -26,12 +26,15 @@ end
 
 def checkGuess
 @index = @wordArray.each_index.select { |i| @wordArray [i] == @letter }
+if @index.empty? == true
+  turn
+else
 @index.map {|x| @hint[x] = @letter}
+end
   #@index = @wordArray.index(@letter)
   #if @wordArray.index(@letter) != nil
   #@hint[@index] = @letter
 #end
-print @wordArray
 print @hint.join(" ")
 checkWin
 end
