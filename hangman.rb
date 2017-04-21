@@ -19,7 +19,7 @@ def startGame
   @length = @word.length
   @hint = Array.new(@length){"_"}
 
-  print "Let's play Hangman!\nYou have 6 chances to guess my word.\nHere is your hint: #{@hint}\nGive me a letter!"
+  print "Let's play Hangman!\nYou have 8 chances to guess my word.\nHere is your hint: #{@hint}\nGive me a letter!"
   @letter = gets.chomp
   checkGuess
 end
