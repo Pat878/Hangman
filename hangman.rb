@@ -73,6 +73,14 @@ else
 end
 
 def saveGame
+  print "Do you want to save your game and exit? Type Y or N"
+  @save = gets.chomp.upcase
+
+  if @save == "Y"
+    serialized_object = YAML::dump(a)
+  elsif @save == "N"
+    checkWin
+  end
 end
 
 end
