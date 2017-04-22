@@ -72,7 +72,9 @@ else
 
 end
 
+def saveGame
 end
 
-a = Hangman.new
-puts a.startGame
+end
+
+a = Hangman.new.startGame
