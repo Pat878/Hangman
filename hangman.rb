@@ -21,7 +21,7 @@ def startGame
   @wrongLetters = []
 
   print "Let's play Hangman!\nYou have 8 chances to guess my word.\nHere is your hint: #{@hint}\nGive me a letter!"
-  @letter = gets.chomp
+  @letter = gets.chomp.downcase
   checkGuess
 end
 
@@ -48,7 +48,7 @@ def checkWin
     exit
     else
     print "\nGive me another letter!"
-    @letter = gets.chomp
+    @letter = gets.chomp.downcase
     checkGuess
   end
 end
