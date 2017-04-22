@@ -1,5 +1,6 @@
 #I used this source to write the checkGuess method
 #https://stackoverflow.com/questions/29636503/getting-the-indexes-of-duplicate-elements-in-arrays-ruby
+require "yaml"
 
 class Hangman
 
