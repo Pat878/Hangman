@@ -77,7 +77,10 @@ def saveGame
   @save = gets.chomp.upcase
 
   if @save == "Y"
-    serialized_object = YAML::dump(a)
+    File.open("saved-game.yaml", "w") do |file|
+      file.write(YAML::dump(self))
+      exit
+    end
   elsif @save == "N"
     checkWin
   end
