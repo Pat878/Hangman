@@ -78,7 +78,7 @@ def saveGame
 
   if @save == "Y"
     File.open("saved-game.yaml", "w") do |file|
-      file.write(YAML::dump(self))
+      file.write(YAML::dump(a)) #a or self?
       exit
     end
   elsif @save == "N"
