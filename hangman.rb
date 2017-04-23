@@ -28,12 +28,12 @@ end
 
 def checkGuess
 @index = @wordArray.each_index.select { |i| @wordArray [i] == @letter }
-if @index.empty? == true
+  if @index.empty? == true
   @wrongLetters.push(@letter)
   turn
-else
-@index.map {|x| @hint[x] = @letter}
-end
+  else
+  @index.map {|x| @hint[x] = @letter}
+  end
   #@index = @wordArray.index(@letter)
   #if @wordArray.index(@letter) != nil
   #@hint[@index] = @letter
@@ -62,7 +62,7 @@ def turn
   print "Game over!\n"
   print @wordArray.join()
   exit
-else
+  else
   print "\nYou have #{7-@i} guesses left!\n"
   end
 
@@ -80,20 +80,21 @@ def saveGame
   elsif @save == "N"
     checkWin
   end
+
 end
 
 def loadGame
   print "\nWould you like to load a previously saved game? Please enter Y or N"
   @prevGame = gets.chomp.upcase
 
-if @prevGame == "Y"
+  if @prevGame == "Y"
   savedFile = YAML::load(File.read("saved-game.yaml"))
- print "\nYour game is loaded!"
- savedFile.checkGuess
+  print "\nYour game is loaded!"
+  savedFile.checkGuess
+  elsif @prevGame == "N"
+  startGame
+  end
 
- elsif @prevGame == "N"
-   startGame
-end
 end
 
 end
