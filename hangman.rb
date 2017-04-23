@@ -58,10 +58,6 @@ def turn
   @i ||= -1
   @i += 1
 
-  #if @win != true
-  #print "\nYou have #{7-@i} guesses left!\n"
-  #end
-
   if @i == 7
   print "Game over!\n"
   print @wordArray.join()
