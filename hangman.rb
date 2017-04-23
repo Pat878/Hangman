@@ -40,7 +40,7 @@ end
 #end
 print @hint.join(" ")
 print "\nIncorrect guesses: #{@wrongLetters}"
-checkWin
+saveGame
 end
 
 def checkWin
@@ -78,7 +78,7 @@ def saveGame
 
   if @save == "Y"
     File.open("saved-game.yaml", "w") do |file|
-      file.write(YAML::dump(a)) #a or self?
+      file.write(YAML::dump(self)) #a or self?
       exit
     end
   elsif @save == "N"
