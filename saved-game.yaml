@@ -1,0 +1,25 @@
+--- !ruby/object:Hangman
+loadPrevGame: N
+word: umbrage
+wordArray:
+- u
+- m
+- b
+- r
+- a
+- g
+- e
+length: 7
+hint:
+- _
+- _
+- _
+- _
+- a
+- _
+- e
+wrongLetters: []
+letter: e
+index:
+- 6
+save: Y

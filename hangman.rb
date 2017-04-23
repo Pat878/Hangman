@@ -73,7 +73,7 @@ else
 end
 
 def saveGame
-  print "Do you want to save your game and exit? Type Y or N"
+  print "\nDo you want to save your game and exit? Type Y or N"
   @save = gets.chomp.upcase
 
   if @save == "Y"
@@ -87,8 +87,19 @@ def saveGame
 end
 
 def loadGame
+  print "\nWould you like to load a previously saved game? Please enter Y or N"
+  @prevGame = gets.chomp.upcase
+
+if @prevGame == "Y"
+  savedFile = YAML::load(File.read("saved-game.yaml"))
+ print "\nYour game is loaded!"
+ savedFile.checkGuess
+
+ elsif @prevGame == "N"
+   startGame
+end
 end
 
 end
 
-a = Hangman.new.startGame
+a = Hangman.new.loadGame
