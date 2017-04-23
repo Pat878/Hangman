@@ -86,7 +86,7 @@ def saveGame
   end
 end
 
-def loadGaem
+def loadGame
 end
 
 end
